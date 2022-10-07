@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { TodoList } from './todoList';
+import { TodoItem } from './todoItem';
+
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +11,23 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'projekt';
+private list = new TodoList("Wikora",
+[ new TodoItem("nic",true),
+new TodoItem("nwm",false),
+new TodoItem("yyyy")
+]);
+
+get username(): string{
+  return this.list.user;
+};
+
+get itemCount(): number{
+   return this.list.items.filter(item => !item.complete).length;
+
+
+}
+
+get items(): readonly TodoItem[]{
+  return this.list.items;
+}
 }
