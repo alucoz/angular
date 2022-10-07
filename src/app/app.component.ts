@@ -22,7 +22,7 @@ get username(): string{
 };
 
 get itemCount(): number{
-   return this.list.items.length;
+   return this.items.length;
 
 
 }
