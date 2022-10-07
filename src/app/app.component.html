@@ -5,7 +5,17 @@
   </h6>
 </h3>
 
-
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+        <input class="form-control" placeholder="Wpisz zadanie do wykonania" #todoText >
+      </div>
+      <div class="col-auto">
+        <button class="btn btn-primary" (click)="addItem(todoText.value)">Dodaj cos se nie</button>
+      </div>
+  </div>
+</div>
+<div class="m-2">
 <table class="table table-stripped tablde-bordered table-sm">
 <thead>
   <tr><th>lp</th><th>Zadanie</th><th>Czy wykonane</th></tr>
@@ -24,3 +34,4 @@
 </tbody>
 
 </table>
+</div>

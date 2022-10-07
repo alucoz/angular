@@ -22,12 +22,18 @@ get username(): string{
 };
 
 get itemCount(): number{
-   return this.list.items.filter(item => !item.complete).length;
+   return this.list.items.length;
 
 
 }
 
 get items(): readonly TodoItem[]{
-  return this.list.items;
+  return this.list.items.filter(item => !item.complete);
 }
+
+addItem(newItem: string){
+  if (newItem != ""){
+    this.list.addItem(newItem);
+    }
+  }
 }
